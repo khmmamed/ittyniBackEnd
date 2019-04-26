@@ -1,0 +1,24 @@
+{
+  "name": "ittynibackend",
+  "version": "0.0.1",
+  "description": "this is an application back end for Medical Record Data",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khmmamed/ittyniBackEnd.git"
+  },
+  "author": "khm@med",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khmmamed/ittyniBackEnd/issues"
+  },
+  "homepage": "https://github.com/khmmamed/ittyniBackEnd#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "mongoose": "^5.5.4"
+  }
+}
