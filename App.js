@@ -17,7 +17,7 @@ mongoose.connect(uri, { useNewUrlParser: true})
 
 
 //Enable CORS For Extern WebSite
-app.use((req, res, next)=> {
+App.use((req, res, next)=> {
  res.header("Access-Control-Allow-Origin", "*");
  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
  next();
