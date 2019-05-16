@@ -13,6 +13,8 @@ const 	express		= require('express'),
  //get All tests 
  router.get("/tests", Tests.getAllTests);
 
+ //get All tests french
+ router.get("/tests/fr", Tests.searchAllTestsOnFrench);
 
 
 /**=========================
