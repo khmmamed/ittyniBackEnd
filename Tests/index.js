@@ -20,12 +20,38 @@ exports.searchAllTestsOnFrench= (req, res, next) => findAllFrenchTests((result =
     res.send(nameMnemonicFinance)
 }));
 
+//find test by french name
+exports.searchTestFrench  = (req, res, next)=>{
+
+    var q = req.query.q;
+
+    q = new RegExp(q, 'ig');
+  
+    
+    searchTestsByNameFr(q, function (result){
+
+        var nameMnemonicFinance = [];
+
+        result.forEach(test => {
+
+            nameMnemonicFinance.push({
+                nameFr : test.name.fr,
+                bcode : typeof test.finance[0] !== 'undefined' ? test.finance[0].Bcode : '',
+                mnemonic : test.reference.Mnemonic
+            })            
+        })
+
+        res.send(nameMnemonicFinance)
+    })
+    
+}
 /**
  * find all tests
  */
 
 findAllTests = (callback) => Core.findByQuery(test, {} , callback);
 findAllFrenchTests =(callback) => Core.findByQuery(test, { "name.fr": { $exists: true } }, callback);
+searchTestsByNameFr = (q, callback) => Core.findByQuery(test, {$or : [{'name.fr' : q}, {'reference.Mnemonic' : q}]}, callback);
 
 /**
  * find All french tests

@@ -16,6 +16,8 @@ const 	express		= require('express'),
  //get All tests french
  router.get("/tests/fr", Tests.searchAllTestsOnFrench);
 
+//VISITOR SEARCH FOR TEST OR TESTS SUUGESTION
+router.get("/eLab/search/tests/fr", Tests.searchTestFrench);
 
 /**=========================
  * Patient area
