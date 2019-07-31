@@ -1,5 +1,6 @@
-let test = require("../Modules/tests"),
-    Core = require("../Core/db")
+let testTable = require("../Modules/tests"),
+    Core = require("../Core/db"),
+    Test = new Core(testTable),
     __   = require("lodash");
 
 
@@ -49,9 +50,9 @@ exports.searchTestFrench  = (req, res, next)=>{
  * find all tests
  */
 
-findAllTests = (callback) => Core.findByQuery(test, {} , callback);
-findAllFrenchTests =(callback) => Core.findByQuery(test, { "name.fr": { $exists: true } }, callback);
-searchTestsByNameFr = (q, callback) => Core.findByQuery(test, {$or : [{'name.fr' : q}, {'reference.Mnemonic' : q}]}, callback);
+findAllTests = (callback) => Test.findByQuery({} , callback);
+findAllFrenchTests =(callback) => Test.findByQuery({ "name.fr": { $exists: true } }, callback);
+searchTestsByNameFr = (q, callback) => Test.findByQuery({$or : [{'name.fr' : q}, {'reference.Mnemonic' : q}]}, callback);
 
 /**
  * find All french tests

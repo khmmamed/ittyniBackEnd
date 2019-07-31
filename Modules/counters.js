@@ -5,8 +5,7 @@
 
 var mongoose = require('mongoose'),
     Schema   = mongoose.Schema;
-
-
+    
 var count = new Schema({
     user : [Number],
     tests : [Number],

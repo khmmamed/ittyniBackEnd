@@ -1,8 +1,12 @@
 const 	express		= require('express'),
         router  	= express.Router(),
-        Tests       = require('./Tests');
+        Tests       = require('./Tests'),
+        Users       = require('./User');
 
-
+/**=========================
+ * example
+ ===========================*/ 
+router.get("/users/all", Users.listAllOurUsers)
 
 /**=========================
  * visitor area
