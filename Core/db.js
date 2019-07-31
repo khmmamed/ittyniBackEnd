@@ -1,12 +1,18 @@
 'use strict';
 
-const CoreDB = {
-
+function CoreDB(tableName){
+    this.table = tableName;
 }
 
-CoreDB.findByQuery= function(table, query, callback){
+//CoreDB.prototype.findOneField(field, query){this.findByQuery({field : query})}
+//CoreDB.prototype.changeMultiFields
+//CoreDB.prototype.changeOneField
+//
+
+
+CoreDB.prototype.findByQuery= function(query, callback){
     
-    table.find(query).exec((e, result)=>{
+    this.table.find(query).exec((e, result)=>{
 
         if(e) throw e;
 
