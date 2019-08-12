@@ -1,7 +1,7 @@
 'use strict';
 
 function CoreDB(tableName){
-    this.table = tableName;
+    this.collection = tableName;
 }
 
 //CoreDB.prototype.findOneField(field, query){this.findByQuery({field : query})}
@@ -12,7 +12,7 @@ function CoreDB(tableName){
 
 CoreDB.prototype.findByQuery= function(query, callback){
     
-    this.table.find(query).exec((e, result)=>{
+    this.collection.find(query).exec((e, result)=>{
 
         if(e) throw e;
 
@@ -25,5 +25,6 @@ CoreDB.prototype.findByQuery= function(query, callback){
 
     })
 }
+
 
 module.exports = CoreDB;

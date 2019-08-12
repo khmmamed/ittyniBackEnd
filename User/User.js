@@ -3,6 +3,25 @@ let userTable = require("../Modules/users"),
     User = new Core(userTable);
 
 
+/***********************
+ * Variables
+ * *********************/
+
+
+/**********************
+ * Methods
+***********************/
+//create new user
+    //get email , password and NotOrPro
+    //test if email is exist
+    //insert data
+    //return Success Or Fail
+
+exports.createNewUser=()=>{};
+
+//==> find all in user table return all fields
 exports.findAllUsers=(callback)=>User.findByQuery({}, callback);
 
-//exports.findByName = (callback) => Users.findOneField("name", "hmida")
+//ValiderVisitorInput()
+//checkIsUniqEmail()
+//insertRecord()

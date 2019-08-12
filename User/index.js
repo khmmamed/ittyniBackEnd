@@ -1,3 +1,7 @@
 let Users = require("./User");
 
-exports.listAllOurUsers = (req, res, next)=> Users.findAllUsers((result=> res.send(result)));
+/**
+ * SupAdmin list user table
+ *  @returns array data
+ */
+exports.supAdminListUsers = (req, res, next)=> Users.findAllUsers((result=> res.send(result)));
